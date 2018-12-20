@@ -1,0 +1,71 @@
+*
+  margin 0
+  padding 0
+body
+  color #333
+  font-size 14px
+  font-family 'Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,微软雅黑,Arial,sans-serif'
+  -webkit-text-size-adjust 100%
+  -webkit-font-smoothing antialiased
+  overflow hidden
+ul,li
+  list-style none
+img
+  vertical-align top
+a
+  text-decoration none
+  &:link,&:active
+    color unset
+a,input,button
+  -webkit-tap-highlight-color rgba(0,0,0,0)
+input,button
+  -webkit-appearance none
+  border-radius 0
+  background #fff
+  border none
+.auto
+  margin auto
+.f-l
+  float left
+.f-r
+  float right
+.text-l
+  text-align left
+.text-r
+  text-align right
+.text-c
+  text-align center
+.text-j
+  text-align justify
+
+//覆盖element-ui css
+.el-menu--horizontal .el-menu-item:not(.is-disabled):focus, .el-menu--horizontal .el-menu-item:not(.is-disabled):hover
+  color:unset
+  background-color:unset
+.el-dropdown-menu__item--divided:before, .el-menu, .el-menu--horizontal>.el-menu-item:not(.is-disabled):focus, .el-menu--horizontal>.el-menu-item:not(.is-disabled):hover, .el-menu--horizontal>.el-submenu .el-submenu__title:hover
+  background-color:unset
+  color:unset
+  border:none
+.el-menu--horizontal>.el-submenu.is-active .el-submenu__title
+  color unset
+  border none
+.el-menu--horizontal>.el-submenu:focus .el-submenu__title, .el-menu--horizontal>.el-submenu:hover .el-submenu__title
+  color unset
+.el-menu-item.is-active
+  color unset
+.el-menu-item,.el-submenu
+  font-size 16px
+  padding  0 30px
+.el-submenu__title
+  padding 0
+  font-size unset
+  i
+    color: unset
+    font-weight bold
+.el-menu-item:focus,.el-menu-item:hover,.el-menu-item:active
+  background-color unset
+.nav-warpper .el-menu--horizontal .el-menu--popup li:hover
+  color #0095e3
+.el-menu--horizontal
+  border none
+

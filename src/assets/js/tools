@@ -1,0 +1,86 @@
+//判断是不是移动端
+export function isMobile() {
+  let userAgentInfo = window.navigator.userAgent;
+  if(/mobile|android|iphone|ipad|phone/i.test(userAgentInfo)) return true
+  return false
+}
+
+//判断移动端系统
+export function mobileSystem() {
+  let userAgentInfo = window.navigator.userAgent;
+  if(userAgentInfo.indexOf('Android') > -1 || userAgentInfo.indexOf('Adr') > -1){
+    return 'android'
+  }else if(userAgentInfo.indexOf('iPad') > -1){
+    return 'ios'
+  }else if(!!userAgentInfo.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/)){
+    return 'ios'
+  }else {
+    return 'android'
+  }
+}
+
+//判断是不是微信
+export function isWeixinBrowser() {
+  let ua = window.navigator.userAgent.toLowerCase();
+  if (ua.match(/MicroMessenger/i) == 'micromessenger') {
+    return true
+  }
+  return false
+}
+
+//获取元素属性
+export function getStyle(el,attr) {
+  if(!el || !attr) return undefined
+  if(window.getComputedStyle){
+    return getComputedStyle(el,null)[attr]
+  }else{
+    return el.currentStyle[attr]
+  }
+}
+
+//读取，设置，删除cookie || localStorage
+export function cookies(key,value) {
+  let storage = window.localStorage;
+  if(!value && typeof value != 'string'){
+    //读取cookie
+    if(storage){
+      return storage.getItem(key)
+    }else {
+      if(document.cookie){
+        let arr = document.cookie.split(';');
+        for(let i = 0;i<arr.length;i++){
+          if(arr[i].split('=')[0] === key){
+            return arr[i].split('=')[1]
+          }
+        }
+      }
+      return null
+    }
+  }else {
+    //保存或删除storage
+    if(storage && value){
+      storage.setItem(key,value)
+    }else if(storage && value === ''){
+      storage.removeItem(key)
+    }else {//保存或删除cookie
+      let date = new Date();
+      date.setDate(date.getDate()+30);
+      document.cookie = key+"="+value+";expires="+date.toUTCString();
+    }
+  }
+}
+
+//根据浏览器判断用户所处语言环境
+export function userLang() {
+  let lang = navigator.languages? navigator.languages[0] : (navigator.language || navigator.userLanguage)
+  if(new RegExp(/^zh_CN/,'i').test(lang)){
+    return 'zh_CN'
+  }else if(new RegExp(/^zh_HK/,'i').test(lang)){
+    return 'zh_HK'
+  }else if(new RegExp(/^en/,'i').test(lang)){
+    return 'en_US'
+  }else {
+    return 'zh_CN'
+  }
+}
+
