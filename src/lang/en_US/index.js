@@ -51,7 +51,7 @@ export default {
     content:[
       {
         subTitle:'Decentralized wallet',
-        introduce: 'Use only one set of mnemonic words to make it easy for you to manage all your digital assets easily. Support for BTC, ETH, USDT and all ERC20 Token, LTC, DOGE and EOS wallets are coming soon.'
+        introduce: 'Use only one set of mnemonic words to make it easy for you to manage all your digital assets easily. Support for BTC, ETH, USDT, EOS and all ERC20 Token, LTC, DOGE.'
       },
       {
         subTitle:'Your assets, you are the master',

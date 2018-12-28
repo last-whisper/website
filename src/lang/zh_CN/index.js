@@ -51,7 +51,7 @@ export default {
     content:[
       {
         subTitle:'去中心化钱包',
-        introduce: '只用一套助记词，方便你轻松管理你的所有数字资产。支持BTC、ETH、USDT及所有ERC20 Token，LTC、DOGE及EOS钱包即将上线。'
+        introduce: '只用一套助记词，方便你轻松管理你的所有数字资产。支持BTC、ETH、USDT、EOS及所有ERC20 Token，LTC、DOGE。'
       },
       {
         subTitle:'你的资产你做主',
